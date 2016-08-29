@@ -16,12 +16,14 @@ text-align: center;
 }
 
 .petCounter {
-  
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
 
-button {
-  margin: 5px;
-  float: right;
+.favPets img {
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .pet img {
@@ -29,4 +31,9 @@ button {
   margin-right: auto;
   max-height: 200px;
   max-width: 200px;
+}
+
+#backToSearch {
+text-align: center;
+margin: 20px;
 }

@@ -1,0 +1,7 @@
+CREATE TABLE favPets (
+id SERIAL PRIMARY KEY,
+petID integer,
+petName varchar(20),
+petImageUrl varchar(200),
+petDescription varchar(100)
+);

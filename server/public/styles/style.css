@@ -21,6 +21,10 @@ text-align: center;
   padding: 0px;
 }
 
+.viewFavs {
+  margin: 5px;
+}
+
 .favPets img {
   max-height: 200px;
   max-width: 200px;

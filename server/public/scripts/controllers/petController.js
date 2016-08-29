@@ -33,10 +33,6 @@ $scope.addFavs = function () {
   currentPet.petID = $scope.pet.id.$t;
   currentPet.petName = $scope.pet.name.$t;
   currentPet.imageURL = $scope.pet.media.photos.photo[2].$t;
-  if($scope.pet.description.$t == null) {
-    console.log("Hey");
-    currentPet.description = "Done";
-  }
   currentPet.description = $scope.pet.description.$t.substring(0, 100);
 
   $http.post('/pets', currentPet)

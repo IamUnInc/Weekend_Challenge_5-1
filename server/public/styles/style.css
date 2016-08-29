@@ -21,8 +21,36 @@ text-align: center;
   padding: 0px;
 }
 
-.viewFavs {
-  margin: 5px;
+.navContainer {
+  position: relative;
+  margin: 20px;
+  display: inline-block;
+}
+
+.navContainer a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.navContainer a:hover {
+  text-decoration: none;
+}
+
+.favPets a:visited {
+  text-decoration: none;
+  color: white;
+}
+#backToSearch {
+  text-align: center;
+  margin: 20px;
+}
+
+#backToSearch a:visited {
+  text-decoration: none;
+  color: white;
+}
+#backToSearch a:hover {
+  text-decoration: none;
 }
 
 .favPets img {
@@ -35,9 +63,4 @@ text-align: center;
   margin-right: auto;
   max-height: 200px;
   max-width: 200px;
-}
-
-#backToSearch {
-text-align: center;
-margin: 20px;
 }

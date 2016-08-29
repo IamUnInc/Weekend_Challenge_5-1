@@ -1,0 +1,19 @@
+{
+  "name": "wkndchal5",
+  "version": "1.0.0",
+  "description": "Last weekend challenge",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jake Malwitz",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "express": "^4.14.0",
+    "body-parser": "^1.15.1",
+    "pg": "^4.5.5"
+  }
+}

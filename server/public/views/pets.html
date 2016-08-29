@@ -1,0 +1,24 @@
+
+
+<div class="container" ng-controller="petController">
+  <div class="viewFavs">
+    <div class="col-md-3">
+    <button type="button" class="btn btn-success"><a href="#favPets">View Favorites!</a></button>
+    <button type="button" class="btn btn-success" ng-click="addFavs()">Add to Favorites!</button>
+  </div>
+
+  <div class="col-md-3">
+    <select id="selectDropDown" ng-options="pet.name for pet in types" ng-model="selectedType">
+      <option value="">Select Type</option>
+    </select>
+    <button type="button" class="btn btn-success" ng-click="getRandomPet()">Search</button>
+  </div>
+
+ <div class="pet">
+  <div class="col-md-6">
+    <h2>{{pet.name.$t}}</h2>
+    <p>{{pet.description.$t}}</p>
+    <img ng-src="{{pet.media.photos.photo[2].$t}}" />
+  </div>
+</div>
+</div>

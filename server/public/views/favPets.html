@@ -1,0 +1,13 @@
+<div class="petCounter">
+<h2>Favorite Pets: {{ favoriteCount}}</h2>
+</div>
+
+  <div class="col-md-6" ng-repeat="pet in favs">
+    <h2>{{ pet.petname }}</h2>
+    <p>{{ pet.petdescription }}</p>
+    <img ng-src="{{ pet.petimageurl }}">
+    <button ng-click="deleteFav(pet.id)">Delete</button>
+  </div>
+
+
+<button><a href="#pets">Search for more favorites!</a></button>

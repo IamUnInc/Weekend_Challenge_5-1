@@ -1,5 +1,6 @@
 
-myApp.controller("petController", ["$scope", "$http", function($scope, $http) {
+myApp.controller("petController", ["$scope","$http", "DataFactory", function($scope, $http, DataFactory) {
+
   var key = '91fb1669a6ccd1c0db0668184a0df9f6';
   var baseURL = 'http://api.petfinder.com/';
 
@@ -15,10 +16,21 @@ myApp.controller("petController", ["$scope", "$http", function($scope, $http) {
    {type: "smallfurry", name: "Rodents"}
  ];
 
- $scope.favs = [];
- var currentPet = {};
- getFavs();
 
+$scope.dataFactory = DataFactory;
+$scope.getFavs = $scope.dataFactory.retrieveData;
+//$scope.getFavs();
+$scope.favs = $scope.dataFactory.favsArray;
+$scope.favoriteCount = $scope.dataFactory.count;
+
+console.log($scope.getFavs);
+//$scope.getFavs();
+console.log($scope.favs);
+ //$scope.favs = [];
+ //var currentPet = {};
+ //getFavs();
+
+/*
 function getFavs() {
   $http.get('/pets')
   .then(function (response) {
@@ -28,7 +40,9 @@ function getFavs() {
     $scope.favoriteCount = $scope.favs.length;
   });
 }
+*/
 
+/*
 $scope.addFavs = function () {
   currentPet.petID = $scope.pet.id.$t;
   currentPet.petName = $scope.pet.name.$t;
@@ -44,7 +58,19 @@ $scope.addFavs = function () {
     getFavs();
   });
 };
+*/
 
+//Adds favorite to the DB then reloads data from factory
+$scope.addFavs = function() {
+  console.log('Adding a fav');
+  $scope.dataFactory.addFaves($scope.pet.id.$t, $scope.pet.name.$t, $scope.pet.media.photos.photo[2].$t, $scope.pet.description.$t.substring(0, 100))
+  .then(function(response) {
+  console.log("IT WORKED");
+  $scope.favs = $scope.dataFactory.petData();
+});
+
+}
+/*
 $scope.deleteFav = function(id) {
 
   if(confirm("Are you sure you want to delete this item?")){
@@ -54,7 +80,9 @@ $scope.deleteFav = function(id) {
     });
   }
 }
+*/
 
+//DON'T TOUCH
   $scope.getRandomPet = function() {
     var query = baseURL + 'pet.getRandom';
     query += '?key=' + key;
